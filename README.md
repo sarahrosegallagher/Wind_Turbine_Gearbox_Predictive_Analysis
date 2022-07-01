@@ -27,7 +27,9 @@ Can we predict wind turbine gearbox failure with sensor data?
 
 * Zoom Meetings 
 
-## Summary
 
-## Results 
+## Models
+After preliminary data cleaning and transformation we intend to investigate the data descriptive statistics, histograms, and feature correlations to the targets. After which, some features may be dropped or merged depending on results. Next we intend to conduct a K-Means unsupervised Machine learning analysis to further investigate grouping within the data to inform the analysis design. Next, we intend to use a Random Forest supervised learning model to predict turbine failure withing a target window. 
+
+ 
 
