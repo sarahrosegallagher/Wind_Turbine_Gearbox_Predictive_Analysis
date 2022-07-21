@@ -5,6 +5,9 @@ Resources/WTG_component_Active.csv
 #files
 *.csv
 
+# Hide Private info
+config.js
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

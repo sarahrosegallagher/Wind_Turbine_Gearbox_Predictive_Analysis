@@ -5,14 +5,21 @@ html {
 
 body { 
     min-height: 100%;
+    max-width: 100%;
 }
 
 .container {
     position: absolute;
     height: 100vh;
     width: 100%;
+}
+
+#main-container {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
     background-image: url("../Images/turbines.gif");
-    background-size: auto 120%;
+    background-size: auto 130%;
 }
 
 #main-page {
@@ -36,4 +43,9 @@ body {
 
 .links {
     margin-right: 20px;
+}
+
+.page_header {
+    text-align: center;
+    left: 50%;
 }
