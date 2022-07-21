@@ -11,7 +11,7 @@ def get_db_connection():
     conn = psy.connect(dbname="wind_turbine_analysis", 
                         user="postgres", 
                         password=rds_password, 
-                        host="wind-turbine-analysis.chv2nnusygyy.us-west-1.rds.amazonaws.com:5432"
+                        host="wind-turbine-analysis.chv2nnusygyy.us-west-1.rds.amazonaws.com"
                         )
     return conn
 
