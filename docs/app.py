@@ -1,11 +1,12 @@
 from flask import Flask, render_template, redirect, url_for
-from flask_pymongo import PyMongo
-import scraping
+from flask_sqlalchemy import SQLAlchemy
+import config import rds_password
+# import visualizations
 
 app = Flask(__name__)
 
-# Use flask_pymongo to set up mongo connection
-app.config["MONGO_URI"] = "mongodb://localhost:27017/mars_app"
+# Use our RDS database to connect to data
+app.config["MONGO_URI"] = f"postgresql://postgres:{rds_password}@wind-turbine-analysis.chv2nnusygyy.us-west-1.rds.amazonaws.com:5432/wind_turbine_analysis"
 mongo = PyMongo(app)
 
 @app.route("/")
