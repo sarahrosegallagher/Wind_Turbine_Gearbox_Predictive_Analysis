@@ -1,8 +1,10 @@
 from flask import Flask, render_template, redirect, url_for
 import os
+import json
 #from flask_sqlalchemy import SQLAlchemy
 from config import rds_password
 import psycopg2 as psy
+import get_data
 
 app = Flask(__name__)
 
@@ -27,12 +29,7 @@ def reason_for_analysis():
 
 @app.route("/visualization.html")
 def visualization():
-    conn = get_db_connection()
-    cur = conn.cursor()
-    cur.execute('SELECT * FROM main')
-    data = cur.fetchall()
-    cur.close()
-    conn.close()
+    data = get_data.make_turbine_dataframes()
     return render_template('visualization.html', data=data)
 
 @app.route("/fourth.html")
