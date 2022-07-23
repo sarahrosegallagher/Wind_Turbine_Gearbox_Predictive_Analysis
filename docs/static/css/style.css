@@ -1,0 +1,51 @@
+html {
+    height: 100%;
+    width: 100vh;
+}
+
+body { 
+    min-height: 100%;
+    max-width: 100%;
+}
+
+.container {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+}
+
+#main-container {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-image: url("../Images/turbines.gif");
+    background-size: auto 130%;
+}
+
+#main-page {
+    position: absolute;
+    background-color: darkgrey;
+    border:black;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    margin: auto;
+    height: auto;
+}
+
+#info {
+    position: absolute;
+    top: 100vh;
+    height: 200vh;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.links {
+    margin-right: 20px;
+}
+
+.page_header {
+    text-align: center;
+    left: 50%;
+}
