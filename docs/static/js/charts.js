@@ -19,9 +19,10 @@ function init() {
         .property("value", name);
     });
 
-    const metricNames = Object.keys(data['T01']);
-    delete metricNames['turbine_id'];
-    delete metricNames['time_stamp'];
+    var metricNames = Object.keys(data['T01']);
+    metricNames.shift(); 
+    metricNames.shift();
+    console.log(metricNames);
 
     metricNames.forEach((name) => {
       metricSelector
@@ -38,7 +39,7 @@ function init() {
     });
 
     var initialTurbine = turbineNames[0]; 
-    var initialMetric = metricNames[2]; 
+    var initialMetric = metricNames[0]; 
     var initialGraph = graphTypes[0]; 
 
     // Initialize the plot with buildChart
@@ -51,11 +52,50 @@ init();
 
 function optionChanged(newSelection) {
 
-  // determine which option changed, and build chart with the new information
-  // CODE GOES HERE 
+  d3.json(jsonFilePath).then((data) => {
 
-  // Fetch new data each time a new option is selected
-  // buildChart(newSelection);
+    const turbineNames = Object.keys(data);
+
+    var metricNames = Object.keys(data['T01']);
+    delete metricNames['turbine_id'];
+    delete metricNames['time_stamp'];
+
+    // determine which option changed, and build chart with the new information
+    if (turbineNames.includes(newSelection)) {
+      var newTurbine = newSelection;
+
+      var select = document.getElementById('selMetric');
+      var currentMetric = select.options[select.selectedIndex].value;
+
+      select = document.getElementById('selGraph');
+      var currentGraph = select.options[select.selectedIndex].value;
+
+      buildChart(newTurbine, currentMetric, currentGraph)
+    }
+    else if (metricNames.includes(newSelection)) {
+      var newMetric = newSelection;
+
+      var select = document.getElementById('selTurbine');
+      var currentTurbine = select.options[select.selectedIndex].value;
+
+      select = document.getElementById('selGraph');
+      var currentGraph = select.options[select.selectedIndex].value;
+
+      buildChart(currentTurbine, newMetric, currentGraph)
+    }
+    else if (graphTypes.includes(newSelection)) {
+      var newGraph = newSelection;
+
+      var select = document.getElementById('selTurbine');
+      var currentTurbine = select.options[select.selectedIndex].value;
+
+      select = document.getElementById('selMetric');
+      var currentMetric = select.options[select.selectedIndex].value;
+
+      buildChart(currentTurbine, currentMetric, newGraph)
+    }
+
+  });
   
 };
 
