@@ -1,25 +1,36 @@
 from flask import Flask, render_template, redirect, url_for
+import os
+import json
 #from flask_sqlalchemy import SQLAlchemy
 from config import rds_password
-# import visualizations
+import psycopg2 as psy
+import get_data
 
 app = Flask(__name__)
 
 # Use our RDS database to connect to data
+def get_db_connection():
+    conn = psy.connect(dbname="wind_turbine_analysis", 
+                        user="postgres", 
+                        password=rds_password, 
+                        host="wind-turbine-analysis.chv2nnusygyy.us-west-1.rds.amazonaws.com"
+                        )
+    return conn
+
 #app.config["SQLALCHEMY_DATABASE_URI"] = f"postgresql://postgres:{rds_password}@wind-turbine-analysis.chv2nnusygyy.us-west-1.rds.amazonaws.com:5432/wind_turbine_analysis"
 
 @app.route("/")
 def index():
     return render_template("index.html")
 
-
 @app.route("/reason_for_analysis.html")
 def reason_for_analysis():
     return render_template('reason_for_analysis.html')
 
-@app.route("/third.html")
-def third():
-    return render_template('third.html')
+@app.route("/visualization.html")
+def visualization():
+    get_data.make_turbine_dataframes()
+    return render_template('visualization.html')
 
 @app.route("/fourth.html")
 def fourth():
