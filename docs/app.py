@@ -1,6 +1,6 @@
 from flask import Flask, render_template, redirect, url_for
-import os
-import json
+from os.path import exists
+from pathlib import Path
 #from flask_sqlalchemy import SQLAlchemy
 from config import rds_password
 import psycopg2 as psy
@@ -17,6 +17,9 @@ def get_db_connection():
                         )
     return conn
 
+#pathing solution using pathlib's Path object
+working_directory = Path(__file__).absolute().parent
+
 #app.config["SQLALCHEMY_DATABASE_URI"] = f"postgresql://postgres:{rds_password}@wind-turbine-analysis.chv2nnusygyy.us-west-1.rds.amazonaws.com:5432/wind_turbine_analysis"
 
 @app.route("/")
@@ -29,7 +32,8 @@ def reason_for_analysis():
 
 @app.route("/visualization.html")
 def visualization():
-    get_data.make_turbine_dataframes()
+    if (exists(working_directory / 'static\\json\\declare.json') == False):
+        get_data.make_turbine_dataframes()
     return render_template('visualization.html')
 
 @app.route("/fourth.html")

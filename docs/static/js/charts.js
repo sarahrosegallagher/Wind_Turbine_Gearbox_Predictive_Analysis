@@ -72,28 +72,43 @@ function buildChart(turbine, metric, graph) {
   
   d3.json(jsonFilePath).then((data) => {
 
-    var plotData = [{
-      x: Object.values(data[turbine_name]['time_stamp']),
-      y: Object.values(data[turbine_name][metric_type]),
-      type: graph_type
-    }]; 
+    
+    //var plotData = [{
+      //x: Object.values(data[turbine_name]['time_stamp']),
+      //y: Object.values(data[turbine_name][metric_type]),
+      //type: graph_type
+    //}]; 
 
-    console.log(plotData[0]['x'])
-
-
-    var trace1 = {
-      y: y0,
-      type: 'box'
-    };
-
-    var plotLayout = {
-      title: graph_type, 
-      xaxis: {
-        title: 'time_stamp'
-      }, 
-      yaxis: {
-        title: metric_type
-      }
+    //console.log(plotData[0]['x'])
+    if (graph_type == "box") {
+      var plotData = [{
+        y: Object.values(data[turbine_name][metric_type]),
+        type: graph_type
+      }];
+      var plotLayout = {
+        title: "Box Plot",
+        yaxis: {
+          title: metric_type
+        }, 
+        xaxis: {
+          title: turbine_name
+        }
+      };
+    }
+    else if (graph_type == "histogram") {
+      var plotData = [{
+        x: Object.values(data[turbine_name][metric_type]),
+        type: graph_type
+      }];
+      var plotLayout = {
+        title: "Histogram",
+        yaxis: {
+          title: metric_type
+        },
+        xaxis: {
+          title: turbine_name
+        }
+      };
     };
 
     // Use Plotly to plot the chart 
