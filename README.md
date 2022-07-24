@@ -44,4 +44,38 @@ Test order:
   * Neural Network (still investigating which one to use for this case)
 
  
+ ## Presentation Plan
+ Potential Outline:
+   * Could start with a full exec summary like an abstract, i.e. super short summary of all elements
+   * Background, problem description, business case
+   * Summary of  Approach
+       * Raw data investigation
+       * Subject matter expert interviews
+       * Wide web and textbook search for best practices
+   * Description of data
+       * What is in it, where it comes from, 
+       * a few descriptive images
+   * Description of database architecture and preprocessing (probably a chart like the one mocked up in the google slides)
+   * Description of exploratory analyes (high level overview of maybe individual turbine tests)
+   * Description of overall database analysis 
+   * Results
+   * Summary
+       * Review Approach
+       * report what we found (or didn't find)
+       * Describe limitations (data itself, approach, algorithms and optimization, generalizability, etc.)
+       * Highlight improvements that could be done to improve approach or work to be dont to implement in real world
+       
+       
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 
