@@ -1,21 +1,21 @@
-from flask import Flask, render_template, redirect, url_for
+from flask import Flask, render_template
 from os.path import exists
 from pathlib import Path
 #from flask_sqlalchemy import SQLAlchemy
-from config import rds_password
+#from config import rds_password
 import psycopg2 as psy
 import get_data
 
 app = Flask(__name__)
 
 # Use our RDS database to connect to data
-def get_db_connection():
-    conn = psy.connect(dbname="wind_turbine_analysis", 
-                        user="postgres", 
-                        password=rds_password, 
-                        host="wind-turbine-analysis.chv2nnusygyy.us-west-1.rds.amazonaws.com"
-                        )
-    return conn
+#def get_db_connection():
+#    conn = psy.connect(dbname="wind_turbine_analysis", 
+#                        user="postgres", 
+#                        password=rds_password, 
+#                        host="wind-turbine-analysis.chv2nnusygyy.us-west-1.rds.amazonaws.com"
+ #                       )
+#    return conn
 
 #pathing solution using pathlib's Path object
 working_directory = Path(__file__).absolute().parent

@@ -1,7 +1,5 @@
 import pandas as pd
-import config
 import json
-import sys
 import os
 from pathlib import Path
 
