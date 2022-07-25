@@ -5,6 +5,13 @@ Resources/WTG_component_Active.csv
 #files
 *.csv
 
+# hide .json files
+*.json
+
+# Hide Private info
+config.js
+config.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
