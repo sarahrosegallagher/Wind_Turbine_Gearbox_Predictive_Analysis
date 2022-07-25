@@ -1,6 +1,4 @@
--- next steps: - standard dev, outliers/trends? => use pd (Isaac)
--- what columns are useful and not? identify more and less useful columns => remove noise 
--- correlations columns to faults => python (not relative predictability)
+
 
 SELECT * FROM main_full;
 
@@ -25,8 +23,7 @@ COUNT(wind_bucket) AS "Count"
 FROM main
 GROUP BY wind_bucket;
 
--- suspect count 
--- what is suspect determined by? 
+-- suspect count (synthetic column created by insdustry consultant) 
 SELECT turbine_id, 
 COUNT(suspect) AS "Suspect Count"
 FROM main
@@ -38,6 +35,8 @@ SELECT turbine_id AS "gear_bear_temp_avg",
 AVG (gear_bear_temp_avg) AS "AVG",
 MIN (gear_bear_temp_avg) AS "MIN",
 MAX (gear_bear_temp_avg) AS "MAX"
+-- add std stddev()	
+-- variance()
 FROM main
 GROUP BY turbine_id;
 
@@ -47,7 +46,8 @@ SELECT turbine_id AS "nac_temp_avg",
 AVG (nac_temp_avg) AS "AVG",
 MIN (nac_temp_avg) AS "MIN",
 MAX (nac_temp_avg) AS "MAX"
--- add std 
+-- add std stddev()	
+-- variance()
 FROM main
 GROUP BY turbine_id;
 
