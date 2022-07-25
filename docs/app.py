@@ -5,6 +5,7 @@ from pathlib import Path
 #from config import rds_password
 import psycopg2 as psy
 import get_data
+import os
 
 app = Flask(__name__)
 
@@ -20,7 +21,7 @@ app = Flask(__name__)
 #pathing solution using pathlib's Path object
 working_directory = Path(__file__).absolute().parent
 
-#app.config["SQLALCHEMY_DATABASE_URI"] = f"postgresql://postgres:{rds_password}@wind-turbine-analysis.chv2nnusygyy.us-west-1.rds.amazonaws.com:5432/wind_turbine_analysis"
+app.config["SQLALCHEMY_DATABASE_URI"] = f"postgresql://postgres:password@wind-turbine-analysis.chv2nnusygyy.us-west-1.rds.amazonaws.com:5432/wind_turbine_analysis"
 
 @app.route("/")
 def index():
