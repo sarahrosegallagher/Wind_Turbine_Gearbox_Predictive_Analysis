@@ -10,7 +10,7 @@ turbine_dataframes = {}
 
 def make_turbine_dataframes(): 
     # Pull the full dataframe from the AWS RDS server. 
-    main_df = pd.read_sql("main", con= f"postgresql://postgres:{config.rds_password}@wind-turbine-analysis.chv2nnusygyy.us-west-1.rds.amazonaws.com:5432/wind_turbine_analysis")
+    main_df = pd.read_sql("main", con= f"postgres://zlbgzswltavihj:fbedde64e672eaaf43c28102955cfdd366ba9c8ec428b2be63c6a8f7548eb241@ec2-34-235-198-25.compute-1.amazonaws.com:5432/ddqn3vlr8d2gbu")
 
     # clean incoming dataset, this can be resolved at the database level eventually. 
     main_df.drop(columns=["index", "suspect"], inplace=True)
