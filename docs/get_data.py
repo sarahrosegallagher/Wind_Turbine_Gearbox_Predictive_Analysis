@@ -1,7 +1,11 @@
 import pandas as pd
+<<<<<<< HEAD
 import config
 import json
 import sys
+=======
+import json
+>>>>>>> cleanest
 import os
 from pathlib import Path
 
@@ -10,7 +14,11 @@ turbine_dataframes = {}
 
 def make_turbine_dataframes(): 
     # Pull the full dataframe from the AWS RDS server. 
+<<<<<<< HEAD
     main_df = pd.read_sql("main", con= f"postgresql://postgres:{config.rds_password}@wind-turbine-analysis.chv2nnusygyy.us-west-1.rds.amazonaws.com:5432/wind_turbine_analysis")
+=======
+    main_df = pd.read_sql("main", con= f"postgresql://postgres:password@wind-turbine-analysis.chv2nnusygyy.us-west-1.rds.amazonaws.com:5432/wind_turbine_analysis")
+>>>>>>> cleanest
 
     # clean incoming dataset, this can be resolved at the database level eventually. 
     main_df.drop(columns=["index", "suspect"], inplace=True)
