@@ -45,7 +45,10 @@ Test order:
 
  
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 3b27d97c7658c4bf0221b1d6e277364a11bf2797
  ## Presentation Plan
  Potential Outline:
    * Could start with a full exec summary like an abstract, i.e. super short summary of all elements
@@ -80,5 +83,8 @@ Test order:
  
  
  
+<<<<<<< HEAD
 >>>>>>> cleanest
+=======
+>>>>>>> 3b27d97c7658c4bf0221b1d6e277364a11bf2797
 
