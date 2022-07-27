@@ -1,31 +1,17 @@
-<<<<<<< HEAD
-const graphTypes = []
-
-function init() {
-  var jsonFilePath = "..\\static\\json\\declare.json"
-  
-=======
 const jsonFilePath = "..\\static\\json\\declare.json"
 const graphTypes = ["box", "histogram"]
 
 function init() {
 
->>>>>>> cleanest
   d3.json(jsonFilePath).then((data) => {
     //console.log(data);
     // Grab a reference to the dropdown select element
     var turbineSelector = d3.select("#selTurbine");
     var metricSelector = d3.select("#selMetric");
     var graphSelector = d3.select("#selGraph");
-<<<<<<< HEAD
-  
-    var turbineNames = Object.keys(data);
-
-=======
 
     const turbineNames = Object.keys(data);
   
->>>>>>> cleanest
     turbineNames.forEach((name) => {
       turbineSelector
         .append("option")
@@ -34,12 +20,9 @@ function init() {
     });
 
     var metricNames = Object.keys(data['T01']);
-<<<<<<< HEAD
-=======
     metricNames.shift(); 
     metricNames.shift();
     console.log(metricNames);
->>>>>>> cleanest
 
     metricNames.forEach((name) => {
       metricSelector
@@ -48,18 +31,12 @@ function init() {
         .property("value", name);
     });
 
-<<<<<<< HEAD
-    graphType.forEach((type) => {
-=======
     graphTypes.forEach((type) => {
->>>>>>> cleanest
       graphSelector
         .append("option")
         .text(type)
         .property("value", type);
     });
-<<<<<<< HEAD
-=======
 
     var initialTurbine = turbineNames[0]; 
     var initialMetric = metricNames[0]; 
@@ -67,7 +44,6 @@ function init() {
 
     // Initialize the plot with buildChart
     buildChart(initialTurbine, initialMetric, initialGraph)
->>>>>>> cleanest
   });
 };
 
@@ -76,12 +52,6 @@ init();
 
 function optionChanged(newSelection) {
 
-<<<<<<< HEAD
-  // Fetch new data each time a new option is selected
-  buildChart(newSelection);
-  
-}
-=======
   d3.json(jsonFilePath).then((data) => {
 
     const turbineNames = Object.keys(data);
@@ -187,4 +157,3 @@ function buildChart(turbine, metric, graph) {
   });
 
 };
->>>>>>> cleanest
