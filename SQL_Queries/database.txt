@@ -1,0 +1,11 @@
+Database
+
+- chose AWS RDS because relational data, no or very few nulls for instrumentation
+- AWS allowed remote access for ML models to read in data using sql alchemy 
+
+- tables:
+    - main full (61 columns, with summary fields such as min, max, stdv)
+    - main trim (44 columns, summary fields removed)
+    - major faults (21 major faults)
+    
+- SQL summary queries 
