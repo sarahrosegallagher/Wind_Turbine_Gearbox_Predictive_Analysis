@@ -1,6 +1,4 @@
-
-
-SELECT * FROM main_full;
+SELECT * FROM main;
 
 -- record count per turbine 
 SELECT turbine_id,
@@ -30,24 +28,35 @@ FROM main
 WHERE suspect = 1
 GROUP BY turbine_id;
 
+-- amb_temp_avg
+SELECT turbine_id AS "amb_temp_avg",
+ROUND(AVG (amb_temp_avg)) AS "AVG",
+MIN (amb_temp_avg) AS "MIN",
+MAX (amb_temp_avg) AS "MAX",
+ROUND(STDDEV(amb_temp_avg)) AS "ST. DEV.",	
+ROUND(VARIANCE(amb_temp_avg)) AS "VARIANCE"
+INTO amb_temp_summary
+FROM main
+GROUP BY turbine_id;
+
 -- gear_bear_temp_avg 
 SELECT turbine_id AS "gear_bear_temp_avg",
 AVG (gear_bear_temp_avg) AS "AVG",
 MIN (gear_bear_temp_avg) AS "MIN",
-MAX (gear_bear_temp_avg) AS "MAX"
--- add std stddev()	
--- variance()
+MAX (gear_bear_temp_avg) AS "MAX",
+STDDEV(gear_bear_temp_avg) AS "ST. DEV.",	
+VARIANCE(gear_bear_temp_avg) AS "VARIANCE"
 FROM main
 GROUP BY turbine_id;
 
 -- nac_temp_avg
--- units on 
 SELECT turbine_id AS "nac_temp_avg",
-AVG (nac_temp_avg) AS "AVG",
+ROUND(AVG (nac_temp_avg)) AS "AVG",
 MIN (nac_temp_avg) AS "MIN",
-MAX (nac_temp_avg) AS "MAX"
--- add std stddev()	
--- variance()
+MAX (nac_temp_avg) AS "MAX",
+ROUND(STDDEV(nac_temp_avg)) AS "ST. DEV.",	
+ROUND(VARIANCE(nac_temp_avg)) AS "VARIANCE"
+INTO nacelle_summary
 FROM main
 GROUP BY turbine_id;
 
