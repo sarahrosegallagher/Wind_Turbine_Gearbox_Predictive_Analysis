@@ -37,17 +37,17 @@ def visualization():
         get_data.make_turbine_dataframes()
     return render_template('visualization.html')
 
-@app.route("/fourth.html")
-def fourth():
-    return render_template('fourth.html')
+@app.route("/tableau_visualizations.html")
+def tableau_visualizations():
+    return render_template('tableau_visualizations.html')
 
-@app.route("/fifth.html")
-def fifth():
-    return render_template('fifth.html')
+@app.route("/slideshow.html")
+def slideshow():
+    return render_template('slideshow.html')
 
-@app.route("/sixth.html")
-def sixth():
-    return render_template('sixth.html')
+@app.route("/supporting_links.html")
+def supporting_links():
+    return render_template('supporting_links.html')
 
 if __name__ == '__main__':
     app.run()
