@@ -2,7 +2,7 @@
 
 ## Background
 
-This analysis explores wind turbine sensor data via machine learning with the goal to decrease cost and increase reliability. The intent is to build a machine learning algorithm to predict wind turbine failure. With high repair costs for catastrophic failures, predicting these failures would lead to a much lower cost in maintenance. Preventative maintenance is an ongoing question in the field and this analysis takes several approaches to investigate the problem. 
+This analysis explored wind turbine sensor data via machine learning with the goal to decrease cost and increase reliability. The intent was to build a machine learning algorithm to predict wind turbine failure. With high repair costs for catastrophic failures, predicting these failures could lead to triggering maintenece operations that would result in failure prevention at a fraction of the repair cost. Preventative maintenance is an ongoing question in the field and this analysis took several approaches to investigate the problem. 
 
 #### Data source description
 
