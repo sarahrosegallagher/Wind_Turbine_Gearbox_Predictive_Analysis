@@ -8,12 +8,20 @@ body {
     max-width: 100%;
     align-items: center;
     justify-content: center;
+    vertical-align: center;
+    margin: auto;
 }
 
 .container {
     position: absolute;
     height: 100vh;
     width: 100%;
+    align-items: center;
+}
+
+.row {
+  position: relative;
+  margin: auto;
 }
 
 #main-container {
@@ -35,6 +43,22 @@ body {
     height: auto;
 }
 
+#visualization-container {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+}
+
+#slideshow-container {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+}
+
+#slideshow-buttons {
+  margin-bottom: 0px;
+}
+
 #info {
     position: absolute;
     top: 100vh;
@@ -50,6 +74,19 @@ body {
 .page_header {
     text-align: center;
     left: 50%;
+}
+
+.reason-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.btn-group {
+  margin-right: 25px;
+  margin-bottom: 25px;
 }
 
 * {box-sizing:border-box}
@@ -88,6 +125,11 @@ body {
   border-radius: 3px 0 0 3px;
 }
 
+.prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
+
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
@@ -113,26 +155,11 @@ body {
   top: 0;
 }
 
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-  background-color: #717171;
-}
-
 /* Fading animation */
 .fade {
   animation-name: fade;
   animation-duration: 1.5s;
+  animation-fill-mode: forwards;
 }
 
 @keyframes fade {
