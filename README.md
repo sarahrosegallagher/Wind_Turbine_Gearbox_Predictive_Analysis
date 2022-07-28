@@ -16,6 +16,8 @@ Which features from the sensor data are most correlated with major failures?
 
 
 ## Models 
+The following machine learning models were used to assess the predictability of the sensor data on the fleet of four wind turbines as a whole. 
+
 
 ### Progressive Machine Learning Model Tests
 * Logistic Regression 
@@ -32,7 +34,7 @@ Which features from the sensor data are most correlated with major failures?
 * Neural Network
 
 #### Results 
-The most successful model was the Random Forest, with 6 out of 7 major faults correctly predicted (true positives) and 8,000 "false alarms" (false positives).  
+In general, we believe almost all of the models overfit on the training data. Most models successfully identified no fault states but failed to identify the fault states accurately. The most successful model was the Random Forest, with 6 out of 7 major faults correctly predicted (true positives) in the test set.  However, 8,000 "false alarms" (false positives) were detected in the test set. Several aspects of the data may have contributed to these results. First, the data was severely imbalanced with only 14 labeled faults and over 200,000 no fault states. Second, it was unclear whether all of the features were predictive of faults at all. Future investigations should evaluate the features for actual importance in fault prediction. 
 
 
 ### Time Binning Approach (Balanced Random Forest)
