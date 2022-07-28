@@ -2,7 +2,7 @@
 
 ## Forward 
 
-* This repository has an associated Heroku web application: (wind-turbine-reliability.herokuapp.com)
+* This repository has an associated Heroku web application: [wind-turbine-reliability.herokuapp.com](wind-turbine-reliability.herokuapp.com)
 * The visualization tab exceeds Heroku's RAM allowance, but launching app.py locally will build the necessary files to run the application on a local server. 
 
 ## Background
