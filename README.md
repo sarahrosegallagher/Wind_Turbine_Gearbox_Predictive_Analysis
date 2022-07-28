@@ -1,5 +1,10 @@
 # Wind Turbine Reliability Analysis
 
+## Forward 
+
+* This repository has an associated Heroku web application: (wind-turbine-reliability.herokuapp.com)
+* The visualization tab exceeds Heroku's RAM allowance, but launching app.py locally will build the necessary files to run the application on a local server. 
+
 ## Background
 
 * Selected topic and reason
@@ -44,11 +49,6 @@ Test order:
   * Neural Network (still investigating which one to use for this case)
 
  
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 3b27d97c7658c4bf0221b1d6e277364a11bf2797
  ## Presentation Plan
  Potential Outline:
    * Could start with a full exec summary like an abstract, i.e. super short summary of all elements
@@ -69,22 +69,3 @@ Test order:
        * report what we found (or didn't find)
        * Describe limitations (data itself, approach, algorithms and optimization, generalizability, etc.)
        * Highlight improvements that could be done to improve approach or work to be dont to implement in real world
-       
-       
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-<<<<<<< HEAD
->>>>>>> cleanest
-=======
->>>>>>> 3b27d97c7658c4bf0221b1d6e277364a11bf2797
-
