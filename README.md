@@ -2,7 +2,7 @@
 
 ## Background
 
-This analysis explores wind turbine sensor data via machine learning with the goal to decrease cost and increase reliability. The intent is to build a machine learning algorithm to predict wind turbine failure. With high repair costs for catostrophic failures, predicting these failures would lead to a much lower cost in maintainence. Preventative maintenance is an ongoing question in the field and this analysis takes several approaches to investigate the problem. 
+This analysis explores wind turbine sensor data via machine learning with the goal to decrease cost and increase reliability. The intent is to build a machine learning algorithm to predict wind turbine failure. With high repair costs for catastrophic failures, predicting these failures would lead to a much lower cost in maintenance. Preventative maintenance is an ongoing question in the field and this analysis takes several approaches to investigate the problem. 
 
 #### Data source description
 
@@ -36,7 +36,7 @@ The most successful model was the Random Forest, with 6 out of 7 major faults co
 
 
 ### Time Binning Approach (Balanced Random Forest)
-This approach addressed the imbalanced dataset by binning the sensor data by time, classifying each measurement based on wether or not there would be a failure in the next bin. The supervised model then attempted to predict if a turbine will experience a major failure in the next time period. 
+This approach addressed the imbalanced dataset by binning the sensor data by time, classifying each measurement based on whether or not there would be a failure in the next bin. The supervised model then attempted to predict if a turbine will experience a major failure in the next time period. 
 
 #### Results 
 This model had overall high recall and low precision, indicating that the model included many "false alarms" but that it correctly predicted a high percentage of the actual faults. 
