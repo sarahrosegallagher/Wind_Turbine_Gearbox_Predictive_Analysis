@@ -2,89 +2,50 @@
 
 ## Background
 
-* Selected topic and reason
+This analysis explores wind turbine sensor data via machine learning with the goal to decrease cost and increase reliability. The intent is to build a machine learning algorithm to predict wind turbine failure. With high repair costs for catostrophic failures, predicting these failures would lead to a much lower cost in maintainence. Preventative maintenance is an ongoing question in the field and this analysis takes several approaches to investigate the problem. 
+
+#### Data source description
+
+Real time monitoring data for 4 wind turbines on 59 features over two years. Measurements averaged and recorded every 10 minutes, totaling 200k records. 
+
+#### Questions we hope to answer with data 
+
+Can we predict wind turbine major failures with sensor data? How do different machine learning models solve or fail to solve this problem?
+
+Which features from the sensor data are most correlated with major failures?
 
 
-Wind turbine reliability. Decrease cost and increase reliability. The intent is to build a machine learning algorithm to predict wind turbine failure. A major component failure occurs on average annually on a wind turbine. With high repair costs for catostrophic failures, predicting these failures would lead to a much lower cost in maintainence. 
+## Models 
 
-* Data source description
+### Progressive Machine Learning Model Tests
+* Logistic Regression 
 
-Real time monitoring data for 29 wind turbines on 66 features from 2019 to 2020. Measurements averaged and recorded every 10 minutes. 10 million records for 19 features of interest for gearbox performance. 
+* Support Vector Machine
 
-* Questions we hope to answer with data 
+* Random Forest
 
-Which features that are measured can give a leading indicator on gearbox failure?
+* Oversampling with SMOTE
 
-Can we predict wind turbine gearbox failure with sensor data?
+  * Logistic Regression
+  * Random Forest
+  
+* Neural Network
 
-## Communication Protocols 
-
-* GitHub
-
-* Slack
-
-* Google Drive
-
-* Zoom Meetings 
+#### Results 
+The most successful model was the Random Forest, with 6 out of 7 major faults correctly predicted (true positives) and 8,000 "false alarms" (false positives).  
 
 
-## Models Plan
-After preliminary data cleaning and transformation we intend to investigate the data descriptive statistics, histograms, and feature correlations to the targets. After which, some features may be dropped or merged depending on results. 
+### Time Binning Approach (Balanced Random Forest)
+This approach addressed the imbalanced dataset by binning the sensor data by time, classifying each measurement based on wether or not there would be a failure in the next bin. The supervised model then attempted to predict if a turbine will experience a major failure in the next time period. 
 
-#### Unsupervised Learning
-Next we intend to conduct a K-Means unsupervised Machine learning analysis to further investigate grouping within the data to inform the analysis design. Then, we intend to use a Random Forest supervised learning model to predict turbine failure withing a target window. 
+#### Results 
+This model had overall high recall and low precision, indicating that the model included many "false alarms" but that it correctly predicted a high percentage of the actual faults. 
 
-#### Supervised Learning
-We intend to conduct a preliminary evaluation several models increasing in power/complexity with each iteration. Each model will be evaluated for performance. After preliminary evaluation, we will optimize performance through feature reduction/elimination, bagging/boosting, activation changes or neural network configuration changes depending on the model choice and optimization options available. 
 
-Test order:
-  * Logistic regression
-  * Support Vector Machine
-  * Random Forest with feature importance testing
-  * Neural Network (still investigating which one to use for this case)
 
- 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 3b27d97c7658c4bf0221b1d6e277364a11bf2797
- ## Presentation Plan
- Potential Outline:
-   * Could start with a full exec summary like an abstract, i.e. super short summary of all elements
-   * Background, problem description, business case
-   * Summary of  Approach
-       * Raw data investigation
-       * Subject matter expert interviews
-       * Wide web and textbook search for best practices
-   * Description of data
-       * What is in it, where it comes from, 
-       * a few descriptive images
-   * Description of database architecture and preprocessing (probably a chart like the one mocked up in the google slides)
-   * Description of exploratory analyes (high level overview of maybe individual turbine tests)
-   * Description of overall database analysis 
-   * Results
-   * Summary
-       * Review Approach
-       * report what we found (or didn't find)
-       * Describe limitations (data itself, approach, algorithms and optimization, generalizability, etc.)
-       * Highlight improvements that could be done to improve approach or work to be dont to implement in real world
+### Minor Faults to Predict Major Faults (Balanced Random Forest) 
+This approach sought to determine if we could use minor faults to predict major faults, rather than using the sensor data to predict major faults. 
+
+#### Results 
+The precision and recall for this model were similar, at 69% for precision and 70% for recall. 
        
-       
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-<<<<<<< HEAD
->>>>>>> cleanest
-=======
->>>>>>> 3b27d97c7658c4bf0221b1d6e277364a11bf2797
-
