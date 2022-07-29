@@ -4,6 +4,8 @@
 
 This analysis explored wind turbine sensor data via machine learning with the goal to decrease cost and increase reliability. The intent was to build a machine learning algorithm to predict wind turbine failure. With high repair costs for catastrophic failures, predicting these failures could lead to triggering maintenece operations that would result in failure prevention at a fraction of the repair cost. Preventative maintenance is an ongoing question in the field and this analysis took several approaches to investigate the problem. 
 
+This repository has an associated Heroku web application: https://wind-turbine-reliability.herokuapp.com/
+
 #### Data source description
 
 Real time monitoring data for 4 wind turbines on 59 features over two years. Measurements averaged and recorded every 10 minutes, totaling 200k records. 
