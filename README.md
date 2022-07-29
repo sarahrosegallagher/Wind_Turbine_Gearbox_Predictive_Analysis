@@ -46,7 +46,6 @@ This approach addressed the imbalanced dataset by binning the sensor data by tim
 This model had overall high recall and low precision, indicating that the model included many "false alarms" but that it correctly predicted a high percentage of the actual faults. 
 
 
-
 ### Minor Faults to Predict Major Faults (Balanced Random Forest) 
 This approach sought to determine if we could use minor faults to predict major faults, rather than using the sensor data to predict major faults. 
 
